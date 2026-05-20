@@ -1,5 +1,6 @@
 import re
-from app.schemas import UserQuery, GuardrailResponse
+
+from app.schemas import GuardrailResponse, UserQuery
 
 
 class GuardrailService:
@@ -34,7 +35,8 @@ class GuardrailService:
                 detected_violation="Restricted Keyword Content",
             )
 
-        # Clean text by removing basic punctuation noise as a placeholder optimization task
+        # Clean text by removing basic punctuation noise
+        # as a placeholder optimization task
         sanitized = re.sub(r"[<>]", "", query.text)
 
         return GuardrailResponse(

@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, status
-from app.schemas import UserQuery, GuardrailResponse
+
+from app.schemas import GuardrailResponse, UserQuery
 from app.services import GuardrailService
 
 app = FastAPI(
