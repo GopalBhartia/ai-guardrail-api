@@ -1,0 +1,22 @@
+[project]
+name = "ai-guardrail-api"
+version = "0.1.0"
+description = "A production-ready FastAPI blueprint for AI input validation and safety guardrails"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.28.0",
+    "pydantic>=2.6.0",
+    "python-dotenv>=1.0.1"
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N"] # Error, Pyflakes, Isort, Naming
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
